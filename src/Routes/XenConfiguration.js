@@ -3,6 +3,8 @@ import './XenConfiguration.css'
 import screw from '../img/icons8-settings-128.png'
 import Dropdown from '../Components/Dropdown';
 import Navbar from '../Components/Navbar';
+import Stepinfo from '../Components/Stepinfo';
+import Header from '../Components/Header';
 
 function Xenconfiguration() {
 
@@ -16,30 +18,35 @@ function Xenconfiguration() {
         <div className='conf--container'>
             <Navbar></Navbar>
             <div className='page--container'>
-                <header className='header--container'>
-                    <img className='header--img' src={screw} alt='screw'></img>
-                    <div className='header--info'>
-                        <h1 className='header--title'>Instalación y configuación de Xen Hypervisor</h1>
-                        <header className='header--text'>Instala y configura Xen a tus preferencias de manera rápida y sencilla</header>
-                    </div>
-                </header>
+                <Header 
+                    img={screw} 
+                    title="Instalación y configuación de Xen Hypervisor"
+                    text="Instala y configura Xen a tus preferencias de manera rápida y sencilla">
+                </Header>
                 <div className='steps--container'>
                     <div className='step'>
-                        <h2 className='step--title'><span className='step--number'>1.</span> Instalación de xen Hypervisor</h2> 
-                        <p className='step--text'>Xen es una excelente alternativa 
-                        para poder crear y configurar tus máquinas virtuales</p>
+                        <Stepinfo 
+                            title="Instalación de xen Hypervisor"
+                            number="1"
+                            text="Xen es una excelente alternativa para poder crear y configurar tus máquinas virtuales">
+                        </Stepinfo>
                         <button className='btn'>Instalar xen Hypervisor en mi equipo</button>
                     </div>
                     <div className='step'>
-                        <h2 className='step--title'><span className='step--number'>2.</span> Especifica el nombre del puente</h2> 
-                        <p className='step--text'>Elige el nombre de tu puente de red, que servirá para 
-                        conectar tu interfaz de ethernet con la interfaz virtual de Xen</p>
+                        <Stepinfo 
+                            title="Especifica el nombre del puente"
+                            number="2"
+                            text="Elige el nombre de tu puente de red, que servirá para conectar tu interfaz de ethernet con la interfaz virtual de Xen">
+                        </Stepinfo>
                         <input className='input' type='text' placeholder='Nombre del puente'></input>
-                        <button className='btn'>Modificar nombre del puente</button>
+                        <button className='btn'>Establece nombre del puente</button>
                     </div>
                     <div className='step'>
-                        <h2 className='step--title'><span className='step--number'>3.</span> Especifica tu interfaz de ethenet</h2> 
-                        <p className='step--text'>Elige el nombre de interfaz de ethenet de la lista</p>
+                        <Stepinfo 
+                            title="Especifica tu interfaz de ethenet"
+                            number="3"
+                            text="Elige el nombre de interfaz de ethenet de la lista">
+                        </Stepinfo>
                         <Dropdown 
                             value={value} 
                             label="" 
@@ -49,15 +56,20 @@ function Xenconfiguration() {
                         <button className='btn'>Establecer como interfaz de ethenet</button>
                     </div>
                     <div className='step'>
-                        <h2 className='step--title'><span className='step--number'>4.</span> Especifica la ruta donde se guardarán tus máquinas virtuales</h2> 
-                        <p className='step--text'>Elige la ruta donde se guardará el disco y la memoria swap de tus máquinas virtuales</p>
+                        <Stepinfo 
+                            title="Especifica la ruta donde se guardarán tus máquinas virtuales"
+                            number="4"
+                            text="Elige la ruta donde se guardará el disco y la memoria swap de tus máquinas virtuales">
+                        </Stepinfo>
                         <input className='input' type='text' placeholder='Ruta de guardado'></input>
                         <button className='btn'>Establacer como ruta</button>
                     </div>
                     <div className='step'>
-                        <h2 className='step--title'><span className='step--number'>5.</span> Reiniciar computadora e iniciar con Xen hypervisor </h2> 
-                        <p className='step--text'>Xen ahora se encuentra configurado, cuando este listo para crear sus máquinas virtuales 
-                        inicié debian/xen-hypervisor en el grub de linux </p>
+                        <Stepinfo 
+                            title="Reiniciar computadora e iniciar con Xen hypervisor"
+                            number="5"
+                            text="Xen ahora se encuentra configurado, cuando este listo para crear sus máquinas virtuales inicié debian/xen-hypervisor en el grub de linux">
+                        </Stepinfo>
                         <button className='btn'>Reiniciar computadora</button>
                     </div>
                 </div>

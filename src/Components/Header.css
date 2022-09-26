@@ -1,0 +1,32 @@
+.header--container {
+    display: flex;
+    margin: 4rem 0 4rem 6rem;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header--img {
+    width: 10rem;
+    height: 10rem;
+    padding: .625rem;
+    border: 1px solid whitesmoke;
+    border-radius: 50%;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.header--info {
+    display: flex;
+    flex-direction: column;
+}
+
+.header--title {
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 2rem;
+    color: #343a40;
+}
+
+.header--text {
+    color:#6c757d;
+    font-size: 1.8rem;
+}
