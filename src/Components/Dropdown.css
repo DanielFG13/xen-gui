@@ -1,0 +1,14 @@
+.select-container {
+    display: inline-block;
+    margin-right: 3rem;
+}
+
+.select {
+    border: none;
+    background-color: #a2a4a6;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}

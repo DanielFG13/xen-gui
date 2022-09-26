@@ -1,0 +1,61 @@
+.navbar {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.navbar--container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.logo--container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.xen-logo {
+    width: 8rem;
+    height: 8rem;
+}
+
+.logo--name {
+    color: #343a40;
+    font-size: 2rem;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.nav--list {
+    display: flex;
+    gap: 4rem;
+}
+
+.nav--item {
+    list-style: none;
+}
+
+.nav--link {
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color:#6c757d;
+}
+
+.nav--link:visited {
+    color:#6c757d;
+}
+
+.nav--link:hover {
+    color: #343a40;
+    border-bottom: 1px solid #6c757d;
+    border-radius: 2px;
+}
+
+.nav--link--active, .nav--link--active:visited{
+    color: #343a40;
+    border-bottom: 1px solid #343a40;
+    border-radius: 2px
+}
