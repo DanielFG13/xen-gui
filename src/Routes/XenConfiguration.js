@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './XenConfiguration.css'
 import screw from '../img/icons8-settings-128.png'
-import Dropdown from '../Components/Dropdown';
+import SelectMenu from '../Components/SelectMenu';
 import Navbar from '../Components/Navbar';
 import Stepinfo from '../Components/Stepinfo';
 import Header from '../Components/Header';
@@ -17,7 +17,7 @@ function Xenconfiguration() {
     return(
         <div className='conf--container'>
             <Navbar></Navbar>
-            <div className='page--container'>
+            <div className='margin--container'>
                 <Header 
                     img={screw} 
                     title="Instalación y configuación de Xen Hypervisor"
@@ -47,12 +47,12 @@ function Xenconfiguration() {
                             number="3"
                             text="Elige el nombre de interfaz de ethenet de la lista">
                         </Stepinfo>
-                        <Dropdown 
+                        <SelectMenu 
                             value={value} 
                             label="" 
                             options={["enp1s0", "eth0"]} 
                             onOptionChange={optionHandler}>  
-                        </Dropdown> 
+                        </SelectMenu> 
                         <button className='btn'>Establecer como interfaz de ethenet</button>
                     </div>
                     <div className='step'>

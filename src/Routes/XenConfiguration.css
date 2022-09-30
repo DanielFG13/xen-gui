@@ -2,7 +2,7 @@
     height: 100%;
 }
 
-.page--container {
+.margin--container {
     width: 80%;
     margin: 0 auto;
 }
@@ -13,7 +13,6 @@
     display: flex;
     flex-direction: column;
     gap: 5rem;
-    width: 70%;
 }
 
 .btn {

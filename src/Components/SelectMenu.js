@@ -1,6 +1,6 @@
-import './Dropdown.css'
+import './SelectMenu.css'
 
-function Dropdown(props) {
+function SelectMenu(props) {
 
     const optionChangeHandler = (event) => {
         props.onOptionChange(event.target.value)
@@ -18,4 +18,4 @@ function Dropdown(props) {
     )
 }
 
-export default Dropdown;
+export default SelectMenu;

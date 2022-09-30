@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav className='navbar'>
         <div className='navbar--container'>
             <div className='logo--container'>
-                <NavLink className="nav--link" to="/">
+                <NavLink to="/home">
                     <img className='xen-logo' src={logo} alt='xen-logo'></img>
                 </NavLink>
                 <p className='logo--name'><code>xen-gui</code></p>
