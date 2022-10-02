@@ -1,0 +1,22 @@
+.details--container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 3rem;
+}
+
+.title--section {
+    text-align: center;
+}
+
+.vm-details {
+    background-color: #ebebebb7;
+    height: 20rem;
+    border: 1px solid black;
+}
+
+.real-time--details {
+    background-color: #ebebebb7;
+    height: 20rem;
+    border: 1px solid black;
+}

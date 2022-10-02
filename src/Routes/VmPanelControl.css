@@ -20,10 +20,11 @@
     text-align: center;
     color: black;
     font-weight: bold;
+    margin: 3rem 0 4rem;
 }
 
 .vm-info--container {
-    background-color: #b7b7b8;
+    background-color: #b5b5b5; 
     grid-column: 2 / 6;
     grid-row: 2;
     border-bottom: 2px solid black;
@@ -43,8 +44,13 @@
     list-style: none;
     margin: 0; 
     padding: 0;
+    gap: 2rem;
 }
 
 .vm-item {
     padding: 0rem 4rem;
+}
+
+.vm-item:hover {
+    background-color: rgba(206,151,62, 0.9);
 }

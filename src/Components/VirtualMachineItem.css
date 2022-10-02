@@ -1,8 +1,8 @@
 .vm-info {
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
     align-items: center;
-    justify-content: flex-start;
+    padding: 0 1rem;
 }
 
 .vm-icon {
@@ -13,13 +13,22 @@
 .vm-name {
     font-size: 1.4rem;
     color: #343a40;
+    font-weight: bolder;
 }
 
-.turn {
+.turnOff, .turnOn {
     height: 1rem;
     width: 1rem;
     border-radius: 50%;
-    background-color: green;
+    background-color: red;
     border: 1px solid black;
-    justify-self: flex-end;
+    margin-left: auto;
+}
+
+.turnOff {
+    background-color: red;
+}
+
+.turnOn {
+    background-color: green;
 }
