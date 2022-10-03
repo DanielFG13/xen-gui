@@ -23,17 +23,17 @@ function VmPanelControl() {
 
   const handleClose = () => setAnchorEl(null);
 
-  React.useEffect(() => {
-    getVms(vmList);
-  }, [vmList]);
-
   async function getVms() {
     const response = await fetch(
-      `http://xengui.com/cgi-bin/getVirtualMachines.py?`
+      `http://xengui.com/cgi-bin/getVirtualMachines.py`
     );
     const data = await response.json();
     setVmList(data["virtualMachines"]);
   }
+
+  React.useEffect(() => {
+    getVms();
+  }, []);
 
   async function getDetails(name) {
     const response = await fetch(
@@ -47,23 +47,54 @@ function VmPanelControl() {
     const vm = el.innerText;
     const isTurnOn = el.querySelector("span").classList.contains("turnOn");
     const vmDetails = await getDetails(vm);
+    console.log(vm, vmDetails);
     setDetails((lastDetails) => ({
       ...lastDetails,
       ...vmDetails,
-      isTurnOn: isTurnOn,
+      isTurnOn,
       name: vm,
     }));
   };
 
-  const handleStart = () => {
+  async function startVm(name) {
+    const response = await fetch(
+      `http://xengui.com/cgi-bin/startVm.py?name=${name}`
+    );
+    const data = await response.json();
+    return data;
+  }
+
+  const handleStart = async () => {
     anchorEl.querySelector("span").classList.add("turnOn");
-    setDetails((details) => ({ ...details, isTurnOn: true }));
+    const data = await startVm(details["name"]);
+    if (!data["error"]) {
+      setDetails((lastDetails) => ({
+        ...lastDetails,
+        name: details["name"],
+        isTurnOn: true,
+      }));
+    }
     handleClose();
   };
 
-  const handleShutdown = () => {
+  async function stopVm(name) {
+    const response = await fetch(
+      `http://xengui.com/cgi-bin/stopVm.py?name=${name}`
+    );
+    const data = await response.json();
+    return data;
+  }
+
+  const handleShutdown = async () => {
     anchorEl.querySelector("span").classList.remove("turnOn");
-    setDetails((details) => ({ ...details, isTurnOn: false }));
+    const data = await stopVm(details["name"]);
+    if (!data["error"]) {
+      setDetails((lastDetails) => ({
+        ...lastDetails,
+        name: details["name"],
+        isTurnOn: false,
+      }));
+    }
     handleClose();
   };
 

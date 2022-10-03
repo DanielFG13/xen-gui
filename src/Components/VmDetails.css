@@ -1,22 +1,22 @@
 .details--container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 6rem;
 }
 
 .title--section {
-    text-align: center;
+  text-align: center;
 }
 
 .vm-details {
-    background-color: #ebebebb7;
-    height: 20rem;
-    border: 1px solid black;
+  background-color: #ebebebb7;
+  height: 20rem;
+  border: 1px solid black;
 }
 
 .real-time--details {
-    background-color: #ebebebb7;
-    height: 20rem;
-    border: 1px solid black;
+  background-color: #ebebebb7;
+  height: 20rem;
+  border: 1px solid black;
 }
