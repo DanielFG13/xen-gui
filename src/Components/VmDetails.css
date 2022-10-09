@@ -11,12 +11,111 @@
 
 .vm-details {
   background-color: #ebebebb7;
-  height: 20rem;
+  height: 25rem;
   border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 1rem 2rem;
+}
+
+.item-detail {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.item-detail img {
+  height: 4rem;
+  width: 4rem;
+}
+
+.item-detail-title {
+  font-size: 1.4rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.item-detail-value {
+  font-size: 1.4rem;
+  font-weight: bolder;
 }
 
 .real-time--details {
   background-color: #ebebebb7;
   height: 20rem;
   border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vm-realtime-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 1rem 2rem;
+}
+
+.not-selected-container,
+.not-started-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-selected-container {
+  height: 100%;
+}
+
+.not-selected-img {
+  width: 30rem;
+  height: 25rem;
+  mix-blend-mode: multiply;
+}
+
+.not-selected-title {
+  font-size: 2rem;
+  font-weight: bolder;
+  color: black;
+  letter-spacing: 0.7rem;
+}
+
+.not-started-title {
+  font-size: 1.4rem;
+  font-weight: bolder;
+  color: black;
+  letter-spacing: 0.3rem;
+}
+
+.not-started-img {
+  width: 15rem;
+  height: 15rem;
+  mix-blend-mode: multiply;
+}
+
+.btn-set-conf {
+  width: 20rem;
+  align-self: center;
+  margin-top: 1.5rem;
+  border-color: transparent;
+  border-radius: 0.375rem;
+  border-width: 1px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  justify-content: center;
+  line-height: 1.5rem;
+  min-width: 100px;
+  padding: 1rem 1.5rem;
+  background-color: rgba(206, 151, 62, 0.9);
+  color: white;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.btn-set-conf:hover {
+  background-color: rgba(206, 151, 62, 0.8);
 }

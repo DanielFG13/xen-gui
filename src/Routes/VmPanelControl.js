@@ -13,12 +13,14 @@ function VmPanelControl() {
   const [vmList, setVmList] = React.useState([]);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [details, setDetails] = React.useState({});
+  const [active, setActive] = React.useState({ name: "" });
 
   const open = Boolean(anchorEl);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
     handleSpecs(event.currentTarget);
+    setActive({ name: event.currentTarget.innerText });
   };
 
   const handleClose = () => setAnchorEl(null);
@@ -33,7 +35,7 @@ function VmPanelControl() {
 
   React.useEffect(() => {
     getVms();
-  }, []);
+  }, [active]);
 
   async function getDetails(name) {
     const response = await fetch(
@@ -47,7 +49,6 @@ function VmPanelControl() {
     const vm = el.innerText;
     const isTurnOn = el.querySelector("span").classList.contains("turnOn");
     const vmDetails = await getDetails(vm);
-    console.log(vm, vmDetails);
     setDetails((lastDetails) => ({
       ...lastDetails,
       ...vmDetails,
@@ -120,7 +121,12 @@ function VmPanelControl() {
             <ul className="vm-list">
               {vmList.map((name, index) => {
                 return (
-                  <li key={index} className="vm-item">
+                  <li
+                    key={index}
+                    className={`vm-item ${
+                      active.name === name ? "vm-item-active" : ""
+                    }`}
+                  >
                     <VirtualMachineItem
                       onClick={handleClick}
                       name={name}

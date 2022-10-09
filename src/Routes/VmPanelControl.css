@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 3fr 10fr;
   grid-template-rows: 1fr 10fr;
-  height: 70rem;
+  height: 90rem;
   margin-top: 8rem;
   margin-bottom: 5rem;
 }
@@ -42,15 +42,15 @@
   display: flex;
   flex-direction: column;
   list-style: none;
-  margin: 0;
-  padding: 0;
   gap: 2rem;
+  padding: 1rem 2rem;
 }
 
 .vm-item {
-  padding: 0rem 4rem;
+  padding: 1rem 2rem;
 }
 
-.vm-item:hover {
+.vm-item:hover,
+.vm-item-active {
   background-color: rgba(206, 151, 62, 0.9);
 }
