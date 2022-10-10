@@ -6,8 +6,6 @@ import panda_moto from "../img/xen-moto.png";
 import hostname from "../img/tag.png";
 import cpu from "../img/cpu.png";
 import ram from "../img/ram.png";
-import disk from "../img/disk.png";
-import swap from "../img/swap.png";
 import ip from "../img/ip.png";
 import mac from "../img/network-card.png";
 
@@ -65,16 +63,6 @@ const VmDetails = (props) => {
           <img src={ram} alt="ram"></img>
           <p className="item-detail-title">ram</p>
           <input type="text" value={props.details.memory}></input>
-        </div>
-        <div className="item-detail">
-          <img src={disk} alt="disk"></img>
-          <p className="item-detail-title">disk</p>
-          <input type="text" value={props.details.disk["disk"]}></input>
-        </div>
-        <div className="item-detail">
-          <img src={swap} alt="swap"></img>
-          <p className="item-detail-title">swap</p>
-          <input type="text" value={props.details.disk["swap"]}></input>
         </div>
         <div className="item-detail">
           <img src={ip} alt="ip"></img>

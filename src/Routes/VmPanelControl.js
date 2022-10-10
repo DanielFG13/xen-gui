@@ -9,11 +9,17 @@ import Header from "../Components/Header";
 import VmDetails from "../Components/VmDetails";
 import icon from "../img/work-station.png";
 
+import add from "../img/add.png";
+import ModalAdd from "../Components/ModalAdd";
+import Spinner from "../Components/Spinner";
+
 function VmPanelControl() {
+  const [isLoading, setLoading] = React.useState(false);
   const [vmList, setVmList] = React.useState([]);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [details, setDetails] = React.useState({});
   const [active, setActive] = React.useState({ name: "" });
+  const [showAdd, setShowAdd] = React.useState(false);
 
   const open = Boolean(anchorEl);
 
@@ -104,6 +110,34 @@ function VmPanelControl() {
     handleClose();
   };
 
+  const openModal = () => {
+    setShowAdd(true);
+  };
+
+  const closeModal = () => {
+    setShowAdd(false);
+  };
+
+  const onSend = async (newVM) => {
+    try {
+      const response = await fetch(
+        `http://xengui.com/cgi-bin/createVM.py?hostname=${newVM.hostname}&disk=${newVM.disk}&swap=${newVM.swap}&ram=${newVM.ram}&ip=${newVM.ip}&vcpus=${newVM.vcpus}&passwd=${newVM.passwd}`
+      );
+      setLoading(true);
+      const data = await response.json();
+      setLoading(false);
+      console.log(data);
+      return data;
+    } catch (err) {
+      setLoading(false);
+      console.log(err);
+    }
+  };
+
+  if (isLoading) {
+    return <Spinner />;
+  }
+
   return (
     <div className="vm-page--container">
       <Navbar></Navbar>
@@ -136,9 +170,16 @@ function VmPanelControl() {
               })}
             </ul>
           </div>
-          <div className="tools"></div>
+          <div className="tools">
+            <img src={add} alt="add" onClick={openModal}></img>
+          </div>
           <div className="vm-info--container">
             <VmDetails details={details}></VmDetails>
+            <ModalAdd
+              show={showAdd}
+              onClose={closeModal}
+              onSend={onSend}
+            ></ModalAdd>
           </div>
         </div>
       </div>
